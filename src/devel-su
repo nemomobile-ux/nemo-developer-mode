@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "devel-su not provided in nemo. Just use su or sudo"
