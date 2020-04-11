@@ -29,10 +29,12 @@ mkdir -p %{buildroot}/var/lib/jolla-developer-mode/preloaded/
 mkdir -p %{buildroot}/usr/bin
 mkdir -p %{buildroot}/etc/connman/firewall.d/
 mkdir -p %{buildroot}/etc/usb-moded/dyn-modes/
+mkdir -p %{buildroot}/etc/sudoers.d/
 
 install -m 755 src/devel-su %{buildroot}/usr/bin
 install -m 644 src/00-devlmode-fw.conf %{buildroot}/etc/connman/firewall.d/
 install -m 644 src/devmode_connecting.ini %{buildroot}/etc/usb-moded/dyn-modes/
+install -m 655 src/sudo_nemo %{buildroot}/etc/sudoers.d/
 
 cd %{buildroot}/lib/systemd/system/multi-user.target.wants/
 ln -s ../sshd.service
